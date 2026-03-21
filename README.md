@@ -39,7 +39,21 @@ EduWorld 2 is a browser-based career simulation game with three distinct gamepla
 
 ---
 
-## How We Built It
+## What It Does
+
+EduWorld 2 is a browser-based career simulation game set in a Kazakhstani school. You start as a first-year teacher and work your way up through three distinct career phases:
+
+**🍎 Teacher** — Run a real classroom day by day. Check homework, explain topics, handle disruptive students (lazy, anxious, bully personality types), answer student questions after lessons, and sit weekly quizzes and summative assessments. Your reputation score determines whether you get promoted.
+
+**🏛️ Deputy Principal** — Inspect other teachers' lessons and give official ratings (Needs Improvement / Good / Excellent). Resolve real school incidents that come up randomly: hallway fights, flu outbreaks, journalists arriving unannounced, fire alarms during exams, a student crying in class. Each situation has three choices with different reputation consequences. Track your progress toward the Director role on a live progress bar.
+
+**👔 Director** — Manage the whole school. Control the weekly budget (income vs. staff salaries), hire and fire teachers, raise or cut salaries, buy equipment, run school events. Handle parent complaints ranging from unfair grading disputes to a local politician asking you to skip the admissions queue. Survive surprise Ministry of Education inspections.
+
+Every decision has a consequence. The game ends with an animated certificate showing your full career summary.
+
+---
+
+
 
 | Technology | Usage |
 |---|---|
