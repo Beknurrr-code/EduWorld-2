@@ -1,0 +1,378 @@
+export type Lang = 'ru' | 'en'
+
+type Dict = Record<string, { ru: string; en: string }>
+
+const STRINGS: Dict = {
+  // ── App ──────────────────────────────────────────────────────────────────
+  'app.name':           { ru: 'Educator Sim 2', en: 'Educator Sim 2' },
+
+  // ── CharSelect ────────────────────────────────────────────────────────────
+  'char.badge':         { ru: 'Educator Sim 2', en: 'Educator Sim 2' },
+  'char.title':         { ru: 'Создание персонажа', en: 'Create Character' },
+  'char.subtitle':      { ru: 'Выберите имя, предмет и класс', en: 'Choose your name, subject and class' },
+  'char.name_label':    { ru: 'Ваше имя (и отчество)', en: 'Your name' },
+  'char.name_ph':       { ru: 'Например: Иван Иванович', en: 'e.g. John Smith' },
+  'char.name_default':  { ru: 'Иван Иванович', en: 'John Smith' },
+  'char.subject':       { ru: 'Предмет', en: 'Subject' },
+  'char.grade':         { ru: 'Класс (год обучения)', en: 'School Grade' },
+  'char.grade_unit':    { ru: 'класс', en: 'grade' },
+  'char.appearance':    { ru: 'Внешность', en: 'Appearance' },
+  'char.start':         { ru: '🏫 Начать работу!', en: '🏫 Start Teaching!' },
+
+  // ── Subjects ─────────────────────────────────────────────────────────────
+  'subj.math':          { ru: 'Математика', en: 'Mathematics' },
+  'subj.physics':       { ru: 'Физика', en: 'Physics' },
+  'subj.chemistry':     { ru: 'Химия', en: 'Chemistry' },
+  'subj.history':       { ru: 'История', en: 'History' },
+  'subj.literature':    { ru: 'Литература', en: 'Literature' },
+  'subj.russian':       { ru: 'Русский язык', en: 'Russian' },
+
+  // ── Appearances ─────────────────────────────────────────────────────────
+  'app.default':        { ru: 'Классический', en: 'Classic' },
+  'app.strict':         { ru: 'Строгий', en: 'Strict' },
+  'app.cool':           { ru: 'Молодой', en: 'Cool' },
+  'app.default_desc':   { ru: 'Строгий деловой костюм', en: 'Formal business suit' },
+  'app.strict_desc':    { ru: 'Всегда с указкой', en: 'Always with a pointer' },
+  'app.cool_desc':      { ru: 'Свитер и джинсы', en: 'Sweater and jeans' },
+
+  // ── HUD ──────────────────────────────────────────────────────────────────
+  'hud.day':            { ru: 'День', en: 'Day' },
+  'hud.attention':      { ru: 'Внимание класса', en: 'Class Attention' },
+  'hud.reputation':     { ru: 'Репутация', en: 'Reputation' },
+  'hud.salary':         { ru: 'Зарплата', en: 'Salary' },
+  'hud.topic_prefix':   { ru: 'Тема:', en: 'Topic:' },
+  'hud.hint_e':         { ru: 'взаимодействие', en: 'interact' },
+  'hud.hint_f1':        { ru: 'курсор', en: 'cursor' },
+  'hud.phase.explanation': { ru: 'Объяснение', en: 'Explanation' },
+  'hud.phase.tasks':    { ru: 'Задания', en: 'Tasks' },
+  'hud.phase.grading':  { ru: 'Проверка тетрадей', en: 'Grading Notebooks' },
+  'hud.phase.homework': { ru: 'Домашнее задание', en: 'Homework' },
+  'hud.phase.done':     { ru: 'Урок завершён', en: 'Lesson Complete' },
+  'hud.phase.quiz':     { ru: 'Контрольная', en: 'Quiz Day' },
+  'hud.warn_attention': { ru: '⚠️ Класс теряет внимание!', en: '⚠️ Class is losing attention!' },
+
+  // ── Explanation panel ────────────────────────────────────────────────────
+  'expl.round':             { ru: 'Часть', en: 'Part' },
+  'expl.topic':             { ru: 'Тема:', en: 'Topic:' },
+  'expl.choose':            { ru: 'Выберите метод объяснения', en: 'Choose an explanation method' },
+  'expl.understanding':     { ru: 'Понимание', en: 'Understanding' },
+  'expl.attention':         { ru: 'Внимание', en: 'Attention' },
+  'expl.phase.intro':       { ru: 'Введение', en: 'Introduction' },
+  'expl.phase.main':        { ru: 'Основная часть', en: 'Core Lesson' },
+  'expl.phase.conclusion':  { ru: 'Закрепление', en: 'Practice' },
+  'expl.stars.hard':        { ru: '★★★ Сложно', en: '★★★ Difficult' },
+  'expl.stars.medium':      { ru: '★★ Средне', en: '★★ Medium' },
+  'expl.stars.easy':        { ru: '★ Легко', en: '★ Easy' },
+  'quiz.wednesday':         { ru: '📋 Среда — проверочная работа!', en: '📋 Wednesday — Quiz Day!' },
+  'quiz.collect_e':         { ru: '📓 Соберите работы — нажмите E', en: '📓 Collect quizzes — press E' },
+  'expl.type.theory':   { ru: 'теория', en: 'theory' },
+  'expl.type.board':    { ru: 'доска', en: 'board' },
+  'expl.type.example':  { ru: 'пример', en: 'example' },
+  'expl.type.question': { ru: 'вопрос', en: 'question' },
+
+  // ── Notebook UI ──────────────────────────────────────────────────────────
+  'nb.title':           { ru: '📓 Проверка тетрадей', en: '📓 Grading Notebooks' },
+  'nb.student':         { ru: 'Ученик:', en: 'Student:' },
+  'nb.errors_title':    { ru: 'Найденные ошибки', en: 'Found errors' },
+  'nb.no_errors':       { ru: '✅ Ошибок не найдено!', en: '✅ No errors found!' },
+  'nb.grade':           { ru: 'Оценка:', en: 'Grade:' },
+  'nb.submit':          { ru: 'Поставить → продолжить', en: 'Grade → continue' },
+  'nb.finish':          { ru: 'Завершить проверку', en: 'Finish grading' },
+  'nb.feedback.2':      { ru: 'Материал не усвоен. Серьёзная работа над ошибками.', en: 'Material not mastered. Serious revision needed.' },
+  'nb.feedback.3':      { ru: 'Удовлетворительно. Основные моменты поняты.', en: 'Satisfactory. Core ideas understood.' },
+  'nb.feedback.4':      { ru: 'Хорошая работа! Небольшие недочёты.', en: 'Good work! Minor issues.' },
+  'nb.feedback.5':      { ru: 'Отлично! Безупречная работа.', en: 'Excellent! Flawless work.' },
+
+  // ── Events ───────────────────────────────────────────────────────────────
+  'ev.label':           { ru: 'Событие', en: 'Event' },
+  'ev.continue':        { ru: 'Продолжить урок', en: 'Continue lesson' },
+
+  // ── Pause menu ───────────────────────────────────────────────────────────
+  'pause.title':        { ru: '⏸ Пауза', en: '⏸ Paused' },
+  'pause.resume':       { ru: '▶  Продолжить', en: '▶  Resume' },
+  'pause.save':         { ru: '💾  Сохранить', en: '💾  Save' },
+  'pause.settings':     { ru: '⚙️  Настройки', en: '⚙️  Settings' },
+  'pause.menu':         { ru: '🏠  Главное меню', en: '🏠  Main Menu' },
+  'pause.menu_confirm': { ru: 'Выйти в меню? Несохранённый прогресс потеряется.', en: 'Exit to menu? Unsaved progress will be lost.' },
+  'pause.version':      { ru: 'Educator Sim v2 · teach2', en: 'Educator Sim v2 · teach2' },
+
+  // ── Report card ──────────────────────────────────────────────────────────
+  'report.title':       { ru: '📋 Итоги урока', en: '📋 Lesson Report' },
+  'report.understood':  { ru: 'Поняли тему', en: 'Understood topic' },
+  'report.avg_und':     { ru: 'Среднее понимание', en: 'Avg. understanding' },
+  'report.xp':          { ru: 'Опыт', en: 'Experience' },
+  'report.rep':         { ru: 'Репутация', en: 'Reputation' },
+  'report.nb_grades':   { ru: '📓 Оценки за тетради', en: '📓 Notebook grades' },
+  'report.hw_given':    { ru: '📚 Домашнее задание задано', en: '📚 Homework assigned' },
+  'report.hw_none':     { ru: 'Домашнее задание не задано', en: 'No homework assigned' },
+  'report.next':        { ru: 'Следующий урок →', en: 'Next lesson →' },
+
+  // ── Day schedule ─────────────────────────────────────────────────────────
+  'sched.label':        { ru: 'Расписание', en: 'Schedule' },
+  'sched.day':          { ru: 'День', en: 'Day' },
+  'sched.start':        { ru: '▶ Начать урок', en: '▶ Start lesson' },
+  'sched.continue':     { ru: '▶ Продолжить', en: '▶ Continue' },
+
+  // ── Week screen ──────────────────────────────────────────────────────────
+  'week.title':         { ru: 'Итоги недели', en: 'Week Summary' },
+  'week.promoted':      { ru: '🏆 Карьера повышена!', en: '🏆 Promoted!' },
+  'week.xp':            { ru: 'Получено опыта', en: 'Experience gained' },
+  'week.rep':           { ru: 'Изменение репутации', en: 'Reputation change' },
+  'week.money':         { ru: 'Зарплата', en: 'Salary' },
+  'week.sp':            { ru: 'Очки навыков', en: 'Skill points' },
+  'week.career':        { ru: 'Карьерный уровень', en: 'Career level' },
+  'week.bonus':         { ru: 'Надбавка:', en: 'Bonus:' },
+  'week.lessons':       { ru: 'Проведено уроков:', en: 'Lessons taught:' },
+  'week.next':          { ru: '▶ Начать следующую неделю', en: '▶ Start next week' },
+
+  // ── Skill tree ───────────────────────────────────────────────────────────
+  'skills.title':       { ru: '🌳 Дерево навыков', en: '🌳 Skill Tree' },
+  'skills.points':      { ru: 'Очки навыков:', en: 'Skill points:' },
+  'skills.branch.pedagogy':   { ru: '📚 Педагогика', en: '📚 Pedagogy' },
+  'skills.branch.psychology': { ru: '🧠 Психология', en: '🧠 Psychology' },
+  'skills.branch.org':        { ru: '📋 Организация', en: '📋 Organization' },
+  'skills.sp_unit':     { ru: ' SP', en: ' SP' },
+  'skills.unlocked':    { ru: 'открыто', en: 'unlocked' },
+
+  // ── Skill names ─────────────────────────────────────────────────────────
+  'skill.ped1.name':    { ru: 'Риторика', en: 'Rhetoric' },
+  'skill.ped1.desc':    { ru: 'Объяснения +20% внимания', en: 'Explanations +20% attention' },
+  'skill.ped2.name':    { ru: 'Мастер доски', en: 'Board Master' },
+  'skill.ped2.desc':    { ru: 'Доска +25% понимания', en: 'Board +25% understanding' },
+  'skill.ped3.name':    { ru: 'Сторителлинг', en: 'Storytelling' },
+  'skill.ped3.desc':    { ru: 'Примеры +35% мотивации', en: 'Examples +35% motivation' },
+  'skill.ped4.name':    { ru: 'Методист', en: 'Methodologist' },
+  'skill.ped4.desc':    { ru: 'Кулдауны действий −25%', en: 'Action cooldowns −25%' },
+  'skill.ped5.name':    { ru: 'Мастер-класс', en: 'Master Class' },
+  'skill.ped5.desc':    { ru: 'XP за объяснения ×1.5', en: 'XP for explanations ×1.5' },
+  'skill.psy1.name':    { ru: 'Эмпатия', en: 'Empathy' },
+  'skill.psy1.desc':    { ru: 'Похвала +25% внимания', en: 'Praise +25% attention' },
+  'skill.psy2.name':    { ru: 'Психолог', en: 'Psychologist' },
+  'skill.psy2.desc':    { ru: 'Тревожные учатся лучше', en: 'Anxious students learn better' },
+  'skill.psy3.name':    { ru: 'Мотиватор', en: 'Motivator' },
+  'skill.psy3.desc':    { ru: 'Задания +50% мотивации', en: 'Tasks +50% motivation' },
+  'skill.psy4.name':    { ru: 'Конфликтолог', en: 'Conflict Resolver' },
+  'skill.psy4.desc':    { ru: 'Конфликты −50% урона', en: 'Conflicts −50% damage' },
+  'skill.psy5.name':    { ru: 'Наставник', en: 'Mentor' },
+  'skill.psy5.desc':    { ru: 'Репутация растёт ×1.5', en: 'Reputation grows ×1.5' },
+  'skill.org1.name':    { ru: 'Тайм-мен.', en: 'Time Manager' },
+  'skill.org1.desc':    { ru: 'Фазы урока +10% XP', en: 'Lesson phases +10% XP' },
+  'skill.org2.name':    { ru: 'Планировщик', en: 'Planner' },
+  'skill.org2.desc':    { ru: 'Викторина +40% внимания', en: 'Quiz +40% attention' },
+  'skill.org3.name':    { ru: 'Администратор', en: 'Administrator' },
+  'skill.org3.desc':    { ru: 'Зарплата +10% в неделю', en: 'Salary +10% per week' },
+  'skill.org4.name':    { ru: 'Инноватор', en: 'Innovator' },
+  'skill.org4.desc':    { ru: 'Особые события ×2 XP', en: 'Special events ×2 XP' },
+  'skill.org5.name':    { ru: 'Директор', en: 'Director' },
+  'skill.org5.desc':    { ru: 'Разблокирует режим директора', en: 'Unlocks Director mode' },
+
+  // ── Student types ────────────────────────────────────────────────────────
+  'student.genius':     { ru: '🧠 Отличник', en: '🧠 Genius' },
+  'student.lazy':       { ru: '😴 Лентяй', en: '😴 Lazy' },
+  'student.bully':      { ru: '😤 Хулиган', en: '😤 Bully' },
+  'student.anxious':    { ru: '😰 Тревожный', en: '😰 Anxious' },
+  'student.helper':     { ru: '🤝 Помощник', en: '🤝 Helper' },
+  'student.average':    { ru: '😊 Обычный', en: '😊 Average' },
+
+  // ── Remarks ──────────────────────────────────────────────────────────────
+  'remark.warning':     { ru: 'Дать замечание', en: 'Give Warning' },
+  'remark.confiscate':  { ru: 'Отобрать телефон', en: 'Confiscate Phone' },
+  'remark.wake':        { ru: 'Разбудить', en: 'Wake Up' },
+  'remark.praise':      { ru: 'Похвалить', en: 'Praise' },
+  'remark.dismiss':     { ru: 'Выгнать из класса', en: 'Dismiss from Class' },
+  'remark.warning_desc':{ ru: 'Предупредить за нарушение дисциплины', en: 'Warn for discipline violation' },
+  'remark.confiscate_desc':{ ru: 'Забрать телефон до конца урока', en: 'Take phone until end of lesson' },
+  'remark.wake_desc':   { ru: 'Разбудить спящего ученика', en: 'Wake up sleeping student' },
+  'remark.praise_desc': { ru: 'Отметить усердие или ответ ученика', en: 'Note effort or student answer' },
+  'remark.dismiss_desc':{ ru: 'Выгнать за серьёзное поведение (-15 дисциплина)', en: 'Dismiss for serious behavior (-15 discipline)' },
+
+  // ── Task panel ───────────────────────────────────────────────────────────
+  'task.phase':         { ru: 'Фаза заданий', en: 'Task Phase' },
+  'task.choose_format': { ru: 'Выберите формат задания', en: 'Choose task format' },
+  'task.format':        { ru: 'Формат:', en: 'Format:' },
+  'task.difficulty':    { ru: 'Сложность:', en: 'Difficulty:' },
+  'task.task_for_class':{ ru: 'Задание для класса:', en: 'Task for class:' },
+  'task.give_task':     { ru: 'Дать задание классу', en: 'Give task to class' },
+  'task.easy':          { ru: 'Лёгкое', en: 'Easy' },
+  'task.medium':        { ru: 'Среднее', en: 'Medium' },
+  'task.hard':          { ru: 'Сложное', en: 'Hard' },
+  'task.easy_desc':     { ru: 'Базовый уровень — проверка понимания. Справятся почти все.', en: 'Basic level — understanding check. Almost everyone will succeed.' },
+  'task.medium_desc':   { ru: 'Средняя сложность — нужно подумать. Хорошие ученики справятся.', en: 'Medium difficulty — needs thinking. Good students will succeed.' },
+  'task.hard_desc':     { ru: 'Высокий уровень — только отличники. Остальные могут запутаться.', en: 'High level — only top students. Others may get confused.' },
+  'task.board':         { ru: 'У доски', en: 'At Board' },
+  'task.written':       { ru: 'Письменно', en: 'Written' },
+  'task.board_desc':    { ru: 'Вызовите ученика к доске. Повышает внимание хулиганов и лентяев.', en: 'Call student to board. Increases attention of bullies and lazy students.' },
+  'task.written_desc':  { ru: 'Раздайте задание на бумаге. Каждый работает самостоятельно.', en: 'Distribute paper task. Everyone works independently.' },
+
+  // ── Lesson prep ──────────────────────────────────────────────────────────
+  'prep.title':         { ru: 'Подготовка к уроку', en: 'Lesson Preparation' },
+  'prep.grade':         { ru: 'класс', en: 'grade' },
+  'prep.topic':         { ru: 'Тема:', en: 'Topic:' },
+  'prep.hw_submitted':  { ru: 'ДЗ сдали:', en: 'HW submitted:' },
+  'prep.hw_checked':    { ru: 'Проверено', en: 'Checked' },
+  'prep.how_start':     { ru: 'Как начнёте урок?', en: 'How will you start the lesson?' },
+  'prep.check_hw':      { ru: 'Проверить домашнее задание', en: 'Check Homework' },
+  'prep.check_hw_desc': { ru: 'Открыть журнал ДЗ, выставить оценки каждому ученику', en: 'Open HW journal, grade each student' },
+  'prep.review':        { ru: 'Повторить тему', en: 'Review Topic' },
+  'prep.review_desc':   { ru: 'Освежить материал урока — первое объяснение станет точнее', en: 'Refresh lesson material — first explanation will be more accurate' },
+  'prep.bright_start':  { ru: 'Яркое начало', en: 'Bright Start' },
+  'prep.bright_desc':   { ru: 'Загадка или интригующий вопрос — класс сразу включается', en: 'Riddle or intriguing question — class engages immediately' },
+  'prep.quick_start':   { ru: 'Сразу к уроку', en: 'Quick Start' },
+  'prep.quick_desc':    { ru: 'Без подготовки. Никаких бонусов, зато быстрее.', en: 'No preparation. No bonuses, but faster.' },
+  'prep.understanding': { ru: 'понимание', en: 'understanding' },
+  'prep.attention':     { ru: 'внимание', en: 'attention' },
+
+  // ── Homework check ───────────────────────────────────────────────────────
+  'hwcheck.title':      { ru: 'Проверка домашнего задания', en: 'Homework Check' },
+  'hwcheck.submitted':  { ru: 'Сдали:', en: 'Submitted:' },
+  'hwcheck.of':         { ru: 'из', en: 'of' },
+  'hwcheck.completed':  { ru: 'выполнили', en: 'completed' },
+  'hwcheck.done':       { ru: 'Выполнили — выставите оценку:', en: 'Done — assign grade:' },
+  'hwcheck.not_done':   { ru: 'Не выполнили — получат 2:', en: 'Not done — will get F:' },
+  'hwcheck.skip':       { ru: 'Не проверять', en: 'Skip Check' },
+  'hwcheck.finish':     { ru: 'Завершить проверку', en: 'Finish Check' },
+
+  // ── Events ───────────────────────────────────────────────────────────────
+  'event.title':        { ru: 'Событие', en: 'Event' },
+  'event.continue':     { ru: 'Продолжить урок', en: 'Continue Lesson' },
+
+  // ── Break ────────────────────────────────────────────────────────────────
+  'break.title':        { ru: 'Перемена!', en: 'Break!' },
+  'break.enter':        { ru: 'Нажмите E у двери класса чтобы войти раньше', en: 'Press E at classroom door to enter early' },
+  'break.remaining':    { ru: 'Перемена — осталось', en: 'Break — remaining' },
+  'break.sec':          { ru: 'сек.', en: 'sec.' },
+  'break.enter_door':   { ru: 'E у двери — войти', en: 'E at door — enter' },
+
+  // ── VP / Director mode ───────────────────────────────────────────────────
+  'vp.title':           { ru: 'Завуч', en: 'Vice Principal' },
+  'vp.day':             { ru: 'День', en: 'Day' },
+  'vp.go_to':           { ru: 'идите к', en: 'go to' },
+  'vp.room':            { ru: 'кабинету', en: 'room' },
+  'vp.inspection_complete':{ ru: 'Обход завершён', en: 'Inspection Complete' },
+  'vp.points':          { ru: 'Баллов:', en: 'Points:' },
+  'vp.rep':             { ru: 'Репут', en: 'Rep' },
+  'vp.promoted':        { ru: 'Вы назначены Директором школы!', en: 'You are appointed School Director!' },
+  'vp.wander':          { ru: 'Ходите по школе, смотрите за учениками', en: 'Walk around school, watch students' },
+  'director.title':     { ru: 'Директор', en: 'Director' },
+
+  // ── Notifications ────────────────────────────────────────────────────────
+  'notif.saved':        { ru: 'Сохранено!', en: 'Saved!' },
+  'notif.settings_unavailable':{ ru: 'Настройки пока недоступны', en: 'Settings not available yet' },
+  'notif.got_warning':  { ru: 'получил замечание', en: 'got warning' },
+  'notif.phone_taken':  { ru: 'Телефон изъят', en: 'Phone confiscated' },
+  'notif.woke_up':      { ru: 'проснулся', en: 'wooke up' },
+  'notif.praised':      { ru: 'похвален!', en: 'praised!' },
+  'notif.dismissed':    { ru: 'выгнан из класса', en: 'dismissed from class' },
+  'notif.losing_attention':{ ru: 'Класс теряет внимание!', en: 'Class is losing attention!' },
+
+  // ── Career levels ────────────────────────────────────────────────────────
+  'career.novice':      { ru: '🌱 Новичок', en: '🌱 Novice' },
+  'career.cat2':        { ru: '📘 2-санат', en: '📘 Category 2' },
+  'career.cat1':        { ru: '📗 1-санат', en: '📗 Category 1' },
+  'career.highest':     { ru: '📙 Жоғары', en: '📙 Highest' },
+  'career.honored':     { ru: '🥇 Үздік', en: '🥇 Honored' },
+  'career.zavuch':      { ru: '🏛️ Завуч', en: '🏛️ Vice Principal' },
+  'career.director':    { ru: '👔 Директор', en: '👔 Director' },
+
+  // ── Ending screen ────────────────────────────────────────────────────────
+  'ending.history':     { ru: 'Тарих жасалды', en: 'History Made' },
+  'ending.school_year': { ru: 'Жыл мектебі!', en: 'School Year!' },
+  'ending.teacher_of':  { ru: 'мұғалімі', en: 'Teacher of' },
+  'ending.ministry':    { ru: 'Қазақстан Республикасы — Білім және ғылым министрлігі', en: 'Republic of Kazakhstan — Ministry of Education and Science' },
+  'ending.certificate': { ru: 'Үздік педагог куәлігі', en: 'Excellence in Teaching Certificate' },
+  'ending.school':      { ru: 'Орта мектеп №47', en: 'Secondary School No. 47' },
+  'ending.weeks_work':  { ru: 'апта жұмыс', en: 'weeks of work' },
+  'ending.students_taught':{ ru: 'оқушы тәрбиеленді', en: 'students taught' },
+  'ending.avg_score':   { ru: 'орташа баллы', en: 'average score' },
+  'ending.school_rating':{ ru: 'Мектеп рейтингі', en: 'School Rating' },
+  'ending.total_earned':{ ru: 'Барлығы табылды', en: 'Total Earned' },
+  'ending.reputation':  { ru: 'Беделі', en: 'Reputation' },
+  'ending.subject':     { ru: 'Пән', en: 'Subject' },
+  'ending.career_path': { ru: 'Мансап жолы', en: 'Career Path' },
+  'ending.career_title':{ ru: '📈 Мансап жолы', en: '📈 Career Path' },
+  'ending.continue':    { ru: 'Жалғастыру', en: 'Continue' },
+  'ending.new_game':    { ru: 'Жаңа ойын', en: 'New Game' },
+  'ending.best_school': { ru: 'Сіздің мектебіңіз Қазақстанның үздік мектептерінің бірі атанды!', en: 'Your school has become one of the best schools in Kazakhstan!' },
+  'ending.students_improved':{ ru: 'оқушы сіздің жетекшіліктеріңізде білімін жетілдірді', en: 'students improved their knowledge under your leadership' },
+  'ending.true_victory':{ ru: 'Бұл — шын мағынасындағы жеңіс.', en: 'This is a true victory.' },
+  'ending.reputation_spread':{ ru: 'Сіздің беделіңіз бүкіл ауданда жайылды', en: 'Your reputation has spread throughout the district' },
+  'ending.true_teacher':{ ru: 'шын мұғалімнің белгісі', en: 'sign of a true teacher' },
+  'ending.year_worked': { ru: 'апта бойы сіз мектепті жетілдіруге жан аяусыз еңбек еттіңіз', en: 'weeks you worked tirelessly to improve the school' },
+  'ending.wont_forget': { ru: 'Оқушылар сізді ұмытпайды', en: 'Students will not forget you' },
+  'ending.most_important':{ ru: 'Бұл ең маңызды нәрсе', en: 'This is the most important thing' },
+
+  // ── Exam System ──────────────────────────────────────────────────────────
+  'exam.title':         { ru: 'КОНТРОЛЬНАЯ РАБОТА', en: 'QUIZ' },
+  'exam.grade':         { ru: 'класс', en: 'grade' },
+  'exam.answer_correct':{ ru: 'Ответ: [показан верный ход решения]', en: 'Answer: [correct solution shown]' },
+  'exam.answer_partial':{ ru: 'Ответ: [частично верно, есть недочёты]', en: 'Answer: [partially correct, has flaws]' },
+  'exam.answer_wrong':  { ru: 'Ответ: [попытка, но допущены существенные ошибки]', en: 'Answer: [attempt, but significant errors made]' },
+
+  // ── Exam Questions ───────────────────────────────────────────────────────
+  'exam.q.math.1':      { ru: 'Задача 1: Решите уравнение 3x² - 5x + 2 = 0', en: 'Problem 1: Solve equation 3x² - 5x + 2 = 0' },
+  'exam.q.math.2':      { ru: 'Задача 2: Найдите производную f(x) = x³ - 4x + 7', en: 'Problem 2: Find derivative of f(x) = x³ - 4x + 7' },
+  'exam.q.math.3':      { ru: 'Задача 3: Вычислите sin²α + cos²α при α = 30°', en: 'Problem 3: Calculate sin²α + cos²α at α = 30°' },
+  'exam.q.math.4':      { ru: 'Задача 4: Найдите корни: |x - 3| = 7', en: 'Problem 4: Find roots: |x - 3| = 7' },
+  'exam.q.math.5':      { ru: 'Задача 5: Логарифм: log₂(32) = ?', en: 'Problem 5: Logarithm: log₂(32) = ?' },
+  'exam.q.physics.1':   { ru: 'Задача 1: Скорость тела 20 м/с, время 5 сек. Найдите ускорение.', en: 'Problem 1: Speed is 20 m/s, time is 5 s. Find acceleration.' },
+  'exam.q.physics.2':   { ru: 'Задача 2: Сила 10 Н, масса 2 кг. Найдите ускорение.', en: 'Problem 2: Force is 10 N, mass is 2 kg. Find acceleration.' },
+  'exam.q.physics.3':   { ru: 'Задача 3: Найдите кинетическую энергию тела массой 4 кг при v=3 м/с.', en: 'Problem 3: Find kinetic energy of a 4 kg body at v=3 m/s.' },
+  'exam.q.physics.4':   { ru: 'Задача 4: Электрический ток 2 А, сопротивление 5 Ом. Найдите напряжение.', en: 'Problem 4: Current is 2 A, resistance is 5 Ω. Find voltage.' },
+  'exam.q.physics.5':   { ru: 'Задача 5: Длина волны 400 нм. Определите частоту.', en: 'Problem 5: Wavelength is 400 nm. Find frequency.' },
+
+  // ── Student names (Kazakh) ───────────────────────────────────────────────
+  'name.aibek':         { ru: 'Айбек', en: 'Aibek' },
+  'name.zarina':        { ru: 'Зарина', en: 'Zarina' },
+  'name.daniyar':       { ru: 'Данияр', en: 'Daniyar' },
+  'name.aysulu':        { ru: 'Айсұлу', en: 'Aysulu' },
+  'name.nurbolat':      { ru: 'Нұрболат', en: 'Nurbolat' },
+  'name.madina':        { ru: 'Мадина', en: 'Madina' },
+  'name.erlan':         { ru: 'Ерлан', en: 'Erlan' },
+  'name.gulnur':        { ru: 'Гүлнұр', en: 'Gulnur' },
+  'name.asel':          { ru: 'Асел', en: 'Asel' },
+  'name.ayaulym':       { ru: 'Аяулым', en: 'Ayaulym' },
+  'name.bekzat':        { ru: 'Бекзат', en: 'Bekzat' },
+  'name.azamat':        { ru: 'Азамат', en: 'Azamat' },
+  'name.tanirbek':      { ru: 'Тәңірбек', en: 'Tanirbek' },
+  'name.inkar':         { ru: 'Инкар', en: 'Inkar' },
+  'name.aruzan':        { ru: 'Арузан', en: 'Aruzan' },
+  'name.sabina':        { ru: 'Сабина', en: 'Sabina' },
+  'name.zhanserik':     { ru: 'Жансерік', en: 'Zhanserik' },
+  'name.aigerim':       { ru: 'Айгерім', en: 'Aigerim' },
+  'name.dilnaz':        { ru: 'Ділнәз', en: 'Dilnaz' },
+  'name.mukhametzhan':  { ru: 'Мұхамеджан', en: 'Mukhametzhan' },
+  'name.kenzhebek':     { ru: 'Кенжебек', en: 'Kenzhebek' },
+  'name.asyl':          { ru: 'Асыл', en: 'Asyl' },
+  'name.dauren':        { ru: 'Даурен', en: 'Dauren' },
+  'name.balzhan':       { ru: 'Балжан', en: 'Balzhan' },
+  'name.alibek':        { ru: 'Алибек', en: 'Alibek' },
+  'name.akmaral':       { ru: 'Акмарал', en: 'Akmaral' },
+  'name.nazim':         { ru: 'Нәзім', en: 'Nazim' },
+  'name.zulfiya':       { ru: 'Зұлфия', en: 'Zulfiya' },
+  'name.tolqyn':        { ru: 'Толқын', en: 'Tolqyn' },
+  'name.adem':          { ru: 'Адем', en: 'Adem' },
+
+  // ── AI prompts (for context) ─────────────────────────────────────────────
+  'ai.mood.attentive':  { ru: 'внимательный', en: 'attentive' },
+  'ai.mood.bored':      { ru: 'скучающий', en: 'bored' },
+  'ai.prompt.genius':   { ru: 'Ученик-отличник', en: 'Straight-A student' },
+  'ai.prompt.rebel':    { ru: 'Ученик-хулиган', en: 'Rebel student' },
+  'ai.prompt.shy':      { ru: 'Тихий ученик', en: 'Shy student' },
+  'ai.prompt.jester':   { ru: 'Ученик-шут', en: 'Class clown' },
+  'ai.fallback.genius': { ru: 'Это неточно...', en: 'That\'s not quite right...' },
+  'ai.fallback.rebel':  { ru: 'Скукажуха.', en: 'Boring...' },
+  'ai.fallback.average':{ ru: 'Ок...', en: 'Okay...' },
+  'ai.fallback.shy':    { ru: '...', en: '...' },
+  'ai.fallback.jester': { ru: 'Хаха!', en: 'Haha!' },
+}
+
+let _lang: Lang = 'en'
+
+export function setLang(l: Lang): void { _lang = l }
+export function getLang(): Lang        { return _lang }
+
+export function t(key: string): string {
+  const entry = STRINGS[key]
+  if (!entry) return key
+  return entry[_lang] ?? entry['ru'] ?? key
+}
