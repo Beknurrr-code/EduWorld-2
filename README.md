@@ -97,6 +97,12 @@ We also gained deep empathy for what teachers actually deal with every day.
 
 ---
 
+## Known Issues
+
+- **Localization bugs**: Some UI strings may still appear in Russian or Kazakh in edge cases (dynamic notifications, rare game events). Full English localization is ongoing — if you spot untranslated text, it's a known work-in-progress.
+
+---
+
 ## Built With
 
 `TypeScript` · `Vite` · `HTML5 Canvas` · `CSS` · `Vanilla JS`
