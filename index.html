@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>EduWorld 2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,10 +21,58 @@
     }
     canvas { display: block; }
     #app { width: 100dvw; height: 100dvh; position: relative; }
+
+    /* в”Ђв”Ђ Mobile responsive overrides в”Ђв”Ђ */
+    @media (max-width: 600px) {
+      /* All inline-styled modal cards get clamped width */
+      #app div[style*="width:700px"],
+      #app div[style*="width: 700px"],
+      #app div[style*="width:720px"],
+      #app div[style*="width: 720px"],
+      #app div[style*="width:660px"],
+      #app div[style*="width: 660px"],
+      #app div[style*="width:600px"],
+      #app div[style*="width: 600px"],
+      #app div[style*="width:560px"],
+      #app div[style*="width: 560px"],
+      #app div[style*="width:540px"],
+      #app div[style*="width: 540px"],
+      #app div[style*="width:520px"],
+      #app div[style*="width: 520px"],
+      #app div[style*="width:480px"],
+      #app div[style*="width: 480px"],
+      #app div[style*="width:460px"],
+      #app div[style*="width: 460px"],
+      #app div[style*="width:740px"],
+      #app div[style*="width: 740px"] {
+        width: 96vw !important;
+        max-width: 96vw !important;
+      }
+
+      /* Raise small text to readable size */
+      #app *[style*="font-size:11px"],
+      #app *[style*="font-size: 11px"],
+      #app *[style*="font-size:12px"],
+      #app *[style*="font-size: 12px"],
+      #app *[style*="font-size:13px"],
+      #app *[style*="font-size: 13px"] {
+        font-size: 14px !important;
+      }
+
+      /* Stretch full-screen overlays to avoid notch overlap */
+      #app > div[style*="position:fixed"],
+      #app > div[style*="position: fixed"] {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+    }
   </style>
-  <script type="module" crossorigin src="/assets/index-BkBlzCLH.js"></script>
+  <script type="module" crossorigin src="/assets/index-B_SkNjTD.js"></script>
 </head>
 <body>
   <div id="app"></div>
 </body>
 </html>
+
